@@ -346,9 +346,6 @@ class _ReadlineWrapper:
             lines = [line.decode('utf-8', errors='replace') for line in f.read().split(b'\n')]
             buffer = []
             for line in lines:
-                # Ignore readline history file header
-                if line.startswith("_HiStOrY_V2_"):
-                    continue
                 if line.endswith("\r"):
                     buffer.append(line+'\n')
                 else:
